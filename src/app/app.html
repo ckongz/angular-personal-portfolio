@@ -1,0 +1,164 @@
+
+<div class="portfolio-shell">
+
+  <!-- NAVIGATION -->
+  <nav class="navbar" aria-label="Main navigation">
+    <a class="brand" href="#home">SC<span>.</span></a>
+
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <span class="eyebrow">WELCOME TO MY PERSONAL SPACE</span>
+
+        <h1>
+          Hello, I'm
+          <span>{{ fullName }}</span>
+        </h1>
+
+        <p class="hero-description">{{ intro }}</p>
+
+        <div class="hero-actions">
+          <a href="#about" class="btn btn-primary">
+            Explore My Profile <span aria-hidden="true">↗</span>
+          </a>
+
+          <a href="#contact" class="btn btn-outline">
+            Get in Touch
+          </a>
+        </div>
+
+        <div class="hero-location">
+          <span class="location-dot"></span>
+          Based in {{ location }}
+        </div>
+      </div>
+
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="hero-monogram">SC</div>
+        <div class="floating-label">DESIGN × DEVELOPMENT</div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section about-section" id="about">
+      <div class="section-heading">
+        <span class="eyebrow">01 / GET TO KNOW ME</span>
+        <h2>A little more <em>about me.</em></h2>
+      </div>
+
+      <div class="about-layout">
+        <div class="about-intro">
+          <p>
+            A creative mind with a passion for building
+            thoughtful digital experiences.
+          </p>
+
+          <div class="accent-line"></div>
+          <span>STUDENT • DESIGNER • DEVELOPER</span>
+        </div>
+
+        <app-profile-card></app-profile-card>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section class="section skills-section" id="skills">
+      <div class="section-heading">
+        <span class="eyebrow">02 / WHAT I WORK WITH</span>
+        <h2>My creative <em>toolkit.</em></h2>
+        <p>Technologies and tools I use to bring ideas to life.</p>
+      </div>
+
+      <div class="skills-grid">
+        @for (skill of skills; track skill; let i = $index) {
+          <div class="skill-card" [style.--index]="i">
+            <span class="skill-number">
+              {{ i + 1 < 10 ? '0' : '' }}{{ i + 1 }}
+            </span>
+
+            <span class="skill-name">{{ skill }}</span>
+            <span class="skill-arrow" aria-hidden="true">↗</span>
+          </div>
+        }
+      </div>
+    </section>
+
+    <!-- INTERACTION -->
+    <section class="section interaction-section">
+      <div class="interaction-content">
+        <span class="eyebrow">03 / A LITTLE INTERACTION</span>
+
+        <h2>
+          Let's make something <em>happen.</em>
+        </h2>
+
+        <p>
+          Angular event binding in action —
+          give this button a click!
+        </p>
+
+        <button
+          type="button"
+          class="btn btn-light"
+          (click)="showMessage()">
+          Click Me <span aria-hidden="true">✦</span>
+        </button>
+
+        <div class="message-box" aria-live="polite">
+          <span class="message-icon">✧</span>
+          <span>{{ message }}</span>
+        </div>
+
+        <p class="click-counter">
+          TOTAL CLICKS: {{ clickCount }}
+        </p>
+      </div>
+
+      <div class="interaction-decoration" aria-hidden="true">✳</div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact-section" id="contact">
+      <span class="eyebrow">04 / LET'S CONNECT</span>
+
+      <h2>Have an idea? <em>Let's talk.</em></h2>
+
+      <p>
+        I'm always happy to connect and explore
+        creative opportunities.
+      </p>
+
+      <div class="contact-links">
+        <a [href]="'mailto:' + email" class="contact-link">
+          <span>Email Me</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+
+        <a [href]="'tel:' + phone" class="contact-link">
+          <span>Call Me</span>
+          <span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <span>© 2026 {{ fullName }}</span>
+    <span>MADE WITH ANGULAR &amp; CREATIVITY ♡</span>
+    <a href="#home">Back to Top ↑</a>
+  </footer>
+
+</div>
