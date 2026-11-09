@@ -1,164 +1,234 @@
 
-<div class="portfolio-shell">
+<div class="portfolio">
 
   <!-- NAVIGATION -->
-  <nav class="navbar" aria-label="Main navigation">
-    <a class="brand" href="#home">SC<span>.</span></a>
+  <header class="site-header">
+    <nav class="nav-container" aria-label="Main navigation">
+      <a class="brand" href="#home">SCO<span>.</span></a>
 
-    <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#proficiencies">Expertise</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
 
   <main>
 
     <!-- HERO -->
     <section class="hero" id="home">
-      <div class="hero-content">
-        <span class="eyebrow">WELCOME TO MY PERSONAL SPACE</span>
+      <div class="hero-glow hero-glow-one"></div>
+      <div class="hero-glow hero-glow-two"></div>
 
-        <h1>
-          Hello, I'm
-          <span>{{ fullName }}</span>
-        </h1>
+      <div class="container hero-content">
+        <div class="hero-copy">
+          <span class="eyebrow light-eyebrow">
+            HELLO, I'M GLAD YOU'RE HERE
+          </span>
 
-        <p class="hero-description">{{ intro }}</p>
+          <h1>
+            Hi, I'm <span>{{ fullName }}</span>
+          </h1>
 
-        <div class="hero-actions">
-          <a href="#about" class="btn btn-primary">
-            Explore My Profile <span aria-hidden="true">↗</span>
-          </a>
-
-          <a href="#contact" class="btn btn-outline">
-            Get in Touch
-          </a>
-        </div>
-
-        <div class="hero-location">
-          <span class="location-dot"></span>
-          Based in {{ location }}
-        </div>
-      </div>
-
-      <div class="hero-art" aria-hidden="true">
-        <div class="orbit orbit-one"></div>
-        <div class="orbit orbit-two"></div>
-        <div class="hero-monogram">SC</div>
-        <div class="floating-label">DESIGN × DEVELOPMENT</div>
-      </div>
-    </section>
-
-    <!-- ABOUT -->
-    <section class="section about-section" id="about">
-      <div class="section-heading">
-        <span class="eyebrow">01 / GET TO KNOW ME</span>
-        <h2>A little more <em>about me.</em></h2>
-      </div>
-
-      <div class="about-layout">
-        <div class="about-intro">
-          <p>
-            A creative mind with a passion for building
-            thoughtful digital experiences.
+          <p class="hero-role">
+            IT Student <span class="role-divider">/</span>
+            Aspiring Web Developer <span class="role-divider">/</span>
+            UI/UX Enthusiast
           </p>
 
-          <div class="accent-line"></div>
-          <span>STUDENT • DESIGNER • DEVELOPER</span>
+          <p class="hero-description">
+            Turning creative ideas into meaningful digital experiences,
+            one line of code at a time.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-light" href="#about">Get to Know Me</a>
+            <a class="btn btn-outline" href="#contact">Let's Connect</a>
+          </div>
         </div>
 
-        <app-profile-card></app-profile-card>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section class="section skills-section" id="skills">
-      <div class="section-heading">
-        <span class="eyebrow">02 / WHAT I WORK WITH</span>
-        <h2>My creative <em>toolkit.</em></h2>
-        <p>Technologies and tools I use to bring ideas to life.</p>
-      </div>
-
-      <div class="skills-grid">
-        @for (skill of skills; track skill; let i = $index) {
-          <div class="skill-card" [style.--index]="i">
-            <span class="skill-number">
-              {{ i + 1 < 10 ? '0' : '' }}{{ i + 1 }}
-            </span>
-
-            <span class="skill-name">{{ skill }}</span>
-            <span class="skill-arrow" aria-hidden="true">↗</span>
+        <div class="hero-art" aria-hidden="true">
+          <div class="art-ring art-ring-one"></div>
+          <div class="art-ring art-ring-two"></div>
+          <div class="art-card">
+            <span class="art-sparkle">✦</span>
+            <span class="art-initials">SCO</span>
+            <span class="art-caption">DESIGN · DEVELOP · CREATE</span>
           </div>
-        }
+          <span class="floating-star star-one">✧</span>
+          <span class="floating-star star-two">✦</span>
+        </div>
+      </div>
+
+      <a class="scroll-indicator" href="#about">SCROLL TO EXPLORE ↓</a>
+    </section>
+
+    <!-- PERSONAL PROFILE -->
+    <section class="section about-section" id="about">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">01 / GET TO KNOW ME</span>
+          <h2>A Little More <em>About Me</em></h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-main">
+            <p class="about-intro">{{ intro }}</p>
+
+            <div class="personal-details">
+              <div class="detail-item">
+                <span class="detail-label">NAME</span>
+                <strong>{{ fullName }}</strong>
+              </div>
+
+              <div class="detail-item">
+                <span class="detail-label">LOCATION</span>
+                <strong>{{ location }}</strong>
+              </div>
+
+              <div class="detail-item">
+                <span class="detail-label">EDUCATION</span>
+                <strong>BS Information Technology</strong>
+              </div>
+
+              <div class="detail-item">
+                <span class="detail-label">UNIVERSITY</span>
+                <strong>Holy Angel University</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-side">
+            <app-profile-card></app-profile-card>
+
+            <div class="quote-card">
+              <span class="quote-mark">“</span>
+              <p>
+                Creativity gives ideas their spark.
+                Technology brings them to life.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
-    <!-- INTERACTION -->
+    <!-- KEY SKILLS -->
+    <section class="section skills-section" id="skills">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">02 / WHAT I KNOW</span>
+          <h2>My Key <em>Skills</em></h2>
+          <p>
+            Technologies and creative skills I've explored through
+            coursework, projects, and continuous learning.
+          </p>
+        </div>
+
+        <div class="skills-grid">
+          @for (skill of skills; track skill; let i = $index) {
+            <div class="skill-card" [style.--index]="i">
+              <span class="skill-number">
+                {{ i + 1 < 10 ? '0' : '' }}{{ i + 1 }}
+              </span>
+              <h3>{{ skill }}</h3>
+              <span class="skill-arrow">↗</span>
+            </div>
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- TECHNICAL PROFICIENCIES -->
+    <section class="section proficiencies-section" id="proficiencies">
+      <div class="container">
+        <div class="section-heading centered">
+          <span class="eyebrow">03 / MY EXPERTISE</span>
+          <h2>Technical <em>Proficiencies</em></h2>
+          <p>
+            A closer look at the tools and technologies I use
+            to turn ideas into functional digital experiences.
+          </p>
+        </div>
+
+        <div class="proficiencies-grid">
+          @for (group of technicalProficiencies; track group.category) {
+            <article class="proficiency-card">
+              <span class="proficiency-number">{{ group.number }}</span>
+              <h3>{{ group.category }}</h3>
+              <p>{{ group.description }}</p>
+
+              <div class="technology-list">
+                @for (technology of group.technologies; track technology) {
+                  <span class="technology-tag">{{ technology }}</span>
+                }
+              </div>
+            </article>
+          }
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERACTIVE SECTION -->
     <section class="section interaction-section">
-      <div class="interaction-content">
-        <span class="eyebrow">03 / A LITTLE INTERACTION</span>
-
-        <h2>
-          Let's make something <em>happen.</em>
-        </h2>
-
+      <div class="container interaction-content">
+        <span class="eyebrow light-eyebrow">04 / A LITTLE INTERACTION</span>
+        <h2>Let's Make This <em>Interactive</em></h2>
         <p>
-          Angular event binding in action —
-          give this button a click!
+          A simple Angular interaction that shows how event binding
+          can update a page dynamically.
         </p>
 
-        <button
-          type="button"
-          class="btn btn-light"
-          (click)="showMessage()">
-          Click Me <span aria-hidden="true">✦</span>
+        <button class="btn btn-light interaction-button"
+                type="button"
+                (click)="showMessage()">
+          Click Me ✦
         </button>
 
-        <div class="message-box" aria-live="polite">
-          <span class="message-icon">✧</span>
-          <span>{{ message }}</span>
-        </div>
-
-        <p class="click-counter">
-          TOTAL CLICKS: {{ clickCount }}
+        <p class="interaction-message" aria-live="polite">
+          {{ message }}
         </p>
       </div>
-
-      <div class="interaction-decoration" aria-hidden="true">✳</div>
     </section>
 
     <!-- CONTACT -->
     <section class="section contact-section" id="contact">
-      <span class="eyebrow">04 / LET'S CONNECT</span>
+      <div class="container">
+        <div class="contact-layout">
+          <div>
+            <span class="eyebrow">05 / SAY HELLO</span>
+            <h2>Let's Create <em>Something Great.</em></h2>
+            <p>
+              I'm always excited to learn, collaborate, and explore
+              new opportunities in web development and design.
+            </p>
+          </div>
 
-      <h2>Have an idea? <em>Let's talk.</em></h2>
+          <div class="contact-card">
+            <span class="contact-label">EMAIL</span>
+            <a [href]="'mailto:' + email">{{ email }}</a>
 
-      <p>
-        I'm always happy to connect and explore
-        creative opportunities.
-      </p>
+            <span class="contact-label">PHONE</span>
+            <a [href]="'tel:' + phone">{{ phone }}</a>
 
-      <div class="contact-links">
-        <a [href]="'mailto:' + email" class="contact-link">
-          <span>Email Me</span>
-          <span aria-hidden="true">↗</span>
-        </a>
-
-        <a [href]="'tel:' + phone" class="contact-link">
-          <span>Call Me</span>
-          <span aria-hidden="true">↗</span>
-        </a>
+            <span class="contact-label">BASED IN</span>
+            <strong>{{ location }}</strong>
+          </div>
+        </div>
       </div>
     </section>
 
   </main>
 
   <!-- FOOTER -->
-  <footer class="footer">
-    <span>© 2026 {{ fullName }}</span>
-    <span>MADE WITH ANGULAR &amp; CREATIVITY ♡</span>
-    <a href="#home">Back to Top ↑</a>
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <a class="brand" href="#home">SCO<span>.</span></a>
+      <p>Designed & developed by {{ fullName }}</p>
+      <span>© 2026</span>
+    </div>
   </footer>
 
 </div>
