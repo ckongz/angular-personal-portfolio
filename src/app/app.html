@@ -1,234 +1,375 @@
 
 <div class="portfolio">
 
-  <!-- NAVIGATION -->
-  <header class="site-header">
-    <nav class="nav-container" aria-label="Main navigation">
-      <a class="brand" href="#home">SCO<span>.</span></a>
+  <!-- COSMIC HEADER -->
+  <app-header
+    [fullName]="fullName"
+    [title]="title"
+    [introduction]="introduction"
+    [email]="email"
+    [phone]="phone">
+  </app-header>
 
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#skills">Skills</a>
-        <a href="#proficiencies">Expertise</a>
-        <a href="#contact">Contact</a>
+  <main class="main-content">
+
+    <!-- ABOUT -->
+    <div class="section-intro">
+      <span class="eyebrow">01 / THE HUMAN BEHIND THE CODE</span>
+      <h2>Meet the <em>creator.</em></h2>
+      <p>A little about who I am and what drives me to build.</p>
+    </div>
+
+    <section class="intro-grid" id="about">
+
+      <div class="profile-card-section">
+        <app-profile-card></app-profile-card>
       </div>
-    </nav>
-  </header>
 
-  <main>
+      <article class="content-card education-card">
+        <div class="card-heading">
+          <span class="section-icon">✧</span>
 
-    <!-- HERO -->
-    <section class="hero" id="home">
-      <div class="hero-glow hero-glow-one"></div>
-      <div class="hero-glow hero-glow-two"></div>
-
-      <div class="container hero-content">
-        <div class="hero-copy">
-          <span class="eyebrow light-eyebrow">
-            HELLO, I'M GLAD YOU'RE HERE
-          </span>
-
-          <h1>
-            Hi, I'm <span>{{ fullName }}</span>
-          </h1>
-
-          <p class="hero-role">
-            IT Student <span class="role-divider">/</span>
-            Aspiring Web Developer <span class="role-divider">/</span>
-            UI/UX Enthusiast
-          </p>
-
-          <p class="hero-description">
-            Turning creative ideas into meaningful digital experiences,
-            one line of code at a time.
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn btn-light" href="#about">Get to Know Me</a>
-            <a class="btn btn-outline" href="#contact">Let's Connect</a>
+          <div>
+            <span class="section-label">MY ACADEMIC JOURNEY</span>
+            <h2 class="section-title">Education</h2>
           </div>
         </div>
 
-        <div class="hero-art" aria-hidden="true">
-          <div class="art-ring art-ring-one"></div>
-          <div class="art-ring art-ring-two"></div>
-          <div class="art-card">
-            <span class="art-sparkle">✦</span>
-            <span class="art-initials">SCO</span>
-            <span class="art-caption">DESIGN · DEVELOP · CREATE</span>
-          </div>
-          <span class="floating-star star-one">✧</span>
-          <span class="floating-star star-two">✦</span>
-        </div>
-      </div>
+        <div class="education-content">
+          <span class="education-tag">CURRENTLY STUDYING</span>
 
-      <a class="scroll-indicator" href="#about">SCROLL TO EXPLORE ↓</a>
-    </section>
+          <h3>Holy Angel University</h3>
 
-    <!-- PERSONAL PROFILE -->
-    <section class="section about-section" id="about">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">01 / GET TO KNOW ME</span>
-          <h2>A Little More <em>About Me</em></h2>
-        </div>
-
-        <div class="about-grid">
-          <div class="about-main">
-            <p class="about-intro">{{ intro }}</p>
-
-            <div class="personal-details">
-              <div class="detail-item">
-                <span class="detail-label">NAME</span>
-                <strong>{{ fullName }}</strong>
-              </div>
-
-              <div class="detail-item">
-                <span class="detail-label">LOCATION</span>
-                <strong>{{ location }}</strong>
-              </div>
-
-              <div class="detail-item">
-                <span class="detail-label">EDUCATION</span>
-                <strong>BS Information Technology</strong>
-              </div>
-
-              <div class="detail-item">
-                <span class="detail-label">UNIVERSITY</span>
-                <strong>Holy Angel University</strong>
-              </div>
-            </div>
-          </div>
-
-          <div class="about-side">
-            <app-profile-card></app-profile-card>
-
-            <div class="quote-card">
-              <span class="quote-mark">“</span>
-              <p>
-                Creativity gives ideas their spark.
-                Technology brings them to life.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- KEY SKILLS -->
-    <section class="section skills-section" id="skills">
-      <div class="container">
-        <div class="section-heading">
-          <span class="eyebrow">02 / WHAT I KNOW</span>
-          <h2>My Key <em>Skills</em></h2>
-          <p>
-            Technologies and creative skills I've explored through
-            coursework, projects, and continuous learning.
+          <p class="degree">
+            Bachelor of Science in Information Technology
           </p>
-        </div>
 
-        <div class="skills-grid">
-          @for (skill of skills; track skill; let i = $index) {
-            <div class="skill-card" [style.--index]="i">
-              <span class="skill-number">
-                {{ i + 1 < 10 ? '0' : '' }}{{ i + 1 }}
-              </span>
-              <h3>{{ skill }}</h3>
-              <span class="skill-arrow">↗</span>
-            </div>
-          }
-        </div>
-      </div>
-    </section>
-
-    <!-- TECHNICAL PROFICIENCIES -->
-    <section class="section proficiencies-section" id="proficiencies">
-      <div class="container">
-        <div class="section-heading centered">
-          <span class="eyebrow">03 / MY EXPERTISE</span>
-          <h2>Technical <em>Proficiencies</em></h2>
-          <p>
-            A closer look at the tools and technologies I use
-            to turn ideas into functional digital experiences.
+          <p class="education-detail">
+            Third Year · School of Computing
           </p>
-        </div>
 
-        <div class="proficiencies-grid">
-          @for (group of technicalProficiencies; track group.category) {
-            <article class="proficiency-card">
-              <span class="proficiency-number">{{ group.number }}</span>
-              <h3>{{ group.category }}</h3>
-              <p>{{ group.description }}</p>
+          <p class="education-detail">
+            Angeles City, Pampanga, Philippines
+          </p>
 
-              <div class="technology-list">
-                @for (technology of group.technologies; track technology) {
-                  <span class="technology-tag">{{ technology }}</span>
-                }
-              </div>
-            </article>
-          }
+          <div class="education-line">
+            ✦ &nbsp; Always learning, always creating.
+          </div>
         </div>
-      </div>
+      </article>
+
     </section>
 
-    <!-- INTERACTIVE SECTION -->
-    <section class="section interaction-section">
-      <div class="container interaction-content">
-        <span class="eyebrow light-eyebrow">04 / A LITTLE INTERACTION</span>
-        <h2>Let's Make This <em>Interactive</em></h2>
+    <!-- SKILLS -->
+    <section class="skills-area" id="skills">
+
+      <div class="section-intro">
+        <span class="eyebrow">02 / MY CREATIVE TOOLBOX</span>
+        <h2>Skills in my <em>orbit.</em></h2>
+
         <p>
-          A simple Angular interaction that shows how event binding
-          can update a page dynamically.
-        </p>
-
-        <button class="btn btn-light interaction-button"
-                type="button"
-                (click)="showMessage()">
-          Click Me ✦
-        </button>
-
-        <p class="interaction-message" aria-live="polite">
-          {{ message }}
+          Technologies I use to bring thoughtful
+          digital experiences to life.
         </p>
       </div>
+
+      <div class="skills-panel">
+        <app-skills
+          [skills]="skills"
+          [proficiencies]="proficiencies"
+          (skillSelected)="onSkillSelected($event)">
+        </app-skills>
+      </div>
+
+      <div class="interaction-card">
+        <span class="interaction-icon">✦</span>
+
+        <div>
+          <h3>Interactive skill explorer</h3>
+
+          @if (selectedSkill) {
+            <p aria-live="polite">
+              Currently exploring:
+              <strong class="selected-pill">
+                {{ selectedSkill }}
+              </strong>
+            </p>
+          } @else {
+            <p>
+              Choose a skill above to see Angular component
+              communication in action.
+            </p>
+          }
+        </div>
+
+        <span class="interaction-signal">● LIVE</span>
+      </div>
+
+    </section>
+
+    <!-- SELECTED PROJECTS -->
+    <section class="projects-section" id="projects">
+
+      <div class="section-intro">
+        <span class="eyebrow">03 / SELECTED WORK</span>
+        <h2>Little ideas. <em>Big galaxies.</em></h2>
+
+        <p>
+          Projects where development meets curiosity and design.
+        </p>
+      </div>
+
+      <div class="projects-grid">
+
+        <article class="project-card project-feature">
+
+          <div class="project-visual">
+            <div class="mock-browser">
+
+              <div class="mock-top">
+                ● &nbsp; ● &nbsp; ●
+                <span>bonappe-find / app</span>
+              </div>
+
+              <div class="mock-content">
+                <span>✦ BONAPPE</span>
+                <h3>Discover something delicious.</h3>
+
+                <div class="mock-search">
+                  Search restaurants...
+                  <span>⌕</span>
+                </div>
+
+                <div class="mock-tiles">
+                  <i></i><i></i><i></i>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="project-info">
+            <span class="project-index">
+              FEATURED PROJECT / 01
+            </span>
+
+            <h3>Bonappe-Find</h3>
+
+            <p>
+              A restaurant discovery web application
+              connecting users with places to eat,
+              built with Vue, Express and MongoDB.
+            </p>
+
+            <div class="project-tags">
+              <span>Vue.js</span>
+              <span>Node.js</span>
+              <span>MongoDB</span>
+              <span>UI/UX</span>
+            </div>
+          </div>
+
+        </article>
+
+        <article class="project-card">
+
+          <div class="project-graphic graphic-design">
+            <span>✧</span>
+            <div class="graphic-caption">
+              DESIGN
+              WITH PURPOSE.
+            </div>
+          </div>
+
+          <div class="project-info">
+            <span class="project-index">
+              DESIGN PROJECT / 02
+            </span>
+
+            <h3>ALFI Website Redesign</h3>
+
+            <p>
+              A concept redesign focused on clearer navigation,
+              accessible layouts and a more meaningful user journey.
+            </p>
+
+            <div class="project-tags">
+              <span>Figma</span>
+              <span>UI Design</span>
+              <span>Prototyping</span>
+            </div>
+          </div>
+
+        </article>
+
+        <article class="project-card">
+
+          <div class="project-graphic graphic-angular">
+            <span class="graphic-bracket">&lt; / &gt;</span>
+
+            <div class="graphic-caption">
+              BUILD. TEST.
+              IMPROVE.
+            </div>
+          </div>
+
+          <div class="project-info">
+            <span class="project-index">
+              DEVELOPMENT / 03
+            </span>
+
+            <h3>Angular CV Portfolio</h3>
+
+            <p>
+              This interactive, component-based portfolio
+              uses reusable Angular components,
+              input bindings and event handling.
+            </p>
+
+            <div class="project-tags">
+              <span>Angular</span>
+              <span>TypeScript</span>
+              <span>CSS</span>
+            </div>
+          </div>
+
+        </article>
+
+      </div>
+
+    </section>
+
+    <!-- TOOLS -->
+    <section class="tools-section" id="tools">
+
+      <div class="section-intro">
+        <span class="eyebrow">04 / MY DIGITAL WORKSPACE</span>
+        <h2>Tools of the <em>trade.</em></h2>
+
+        <p>
+          A few essentials behind the scenes of my workflow.
+        </p>
+      </div>
+
+      <div class="tools-grid">
+
+        @for (tool of tools; track tool) {
+
+          <div class="tool-card">
+            <span class="tool-icon">
+
+              @switch (tool) {
+                @case ('Visual Studio Code') { ⌘ }
+                @case ('GitHub') { ◎ }
+                @case ('Postman') { ↗ }
+                @case ('Figma') { ✿ }
+              }
+
+            </span>
+
+            <span>{{ tool }}</span>
+            <span class="tool-arrow">↗</span>
+          </div>
+
+        }
+
+      </div>
+
+    </section>
+
+    <!-- ANGULAR INTERACTION -->
+    <section
+      class="act1-interaction"
+      aria-labelledby="act1-interaction-heading">
+
+      <div class="interaction-stars" aria-hidden="true">
+        ✦ &nbsp; ✧ &nbsp; ✦
+      </div>
+
+      <span class="eyebrow">05 / A LITTLE INTERACTION</span>
+
+      <h2 id="act1-interaction-heading">
+        Make a little <em>magic.</em>
+      </h2>
+
+      <p>
+        A tiny Angular experiment:
+        every click creates a new moment.
+      </p>
+
+      <button type="button" (click)="showMessage()">
+        Click for some stardust ✦
+      </button>
+
+      <p class="act1-message" aria-live="polite">
+        {{ clickMessage }}
+      </p>
+
     </section>
 
     <!-- CONTACT -->
-    <section class="section contact-section" id="contact">
-      <div class="container">
-        <div class="contact-layout">
-          <div>
-            <span class="eyebrow">05 / SAY HELLO</span>
-            <h2>Let's Create <em>Something Great.</em></h2>
-            <p>
-              I'm always excited to learn, collaborate, and explore
-              new opportunities in web development and design.
-            </p>
-          </div>
+    <section class="contact-banner" id="contact">
 
-          <div class="contact-card">
-            <span class="contact-label">EMAIL</span>
-            <a [href]="'mailto:' + email">{{ email }}</a>
-
-            <span class="contact-label">PHONE</span>
-            <a [href]="'tel:' + phone">{{ phone }}</a>
-
-            <span class="contact-label">BASED IN</span>
-            <strong>{{ location }}</strong>
-          </div>
-        </div>
+      <div class="contact-art" aria-hidden="true">
+        <div class="contact-orb">✦</div>
       </div>
+
+      <div class="contact-copy">
+        <span class="contact-eyebrow">
+          06 / OPEN A NEW CONNECTION
+        </span>
+
+        <h2>
+          Have an idea?
+          <em>Let's make it cosmic.</em>
+        </h2>
+
+        <p class="contact-description">
+          I'm always excited to learn, collaborate
+          and turn creative ideas into experiences
+          that matter.
+        </p>
+
+        <div class="contact-details">
+
+          <a
+            [href]="'mailto:' + email"
+            class="contact-detail">
+            <span>✉</span>
+            {{ email }}
+          </a>
+
+          <a
+            [href]="'tel:' + phone"
+            class="contact-detail">
+            <span>☎</span>
+            {{ phone }}
+          </a>
+
+          <span class="contact-detail">
+            <span>⌖</span>
+            {{ location }}
+          </span>
+
+        </div>
+
+        <a
+          [href]="'mailto:' + email"
+          class="contact-button">
+          Send me a message ↗
+        </a>
+
+      </div>
+
     </section>
 
   </main>
 
-  <!-- FOOTER -->
-  <footer class="site-footer">
-    <div class="container footer-content">
-      <a class="brand" href="#home">SCO<span>.</span></a>
-      <p>Designed & developed by {{ fullName }}</p>
-      <span>© 2026</span>
-    </div>
-  </footer>
+  <!-- MAIN FOOTER -->
+  <app-footer
+    [fullName]="fullName"
+    [year]="year"
+    [proficiencies]="proficiencies">
+  </app-footer>
 
 </div>

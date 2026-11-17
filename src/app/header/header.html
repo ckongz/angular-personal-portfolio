@@ -1,0 +1,126 @@
+
+@if (checkpoint()) {
+  <div class="checkpoint-message">
+    <span class="checkpoint-icon">✓</span>
+    <div>
+      <span class="checkpoint-label">COMPONENT ONLINE</span>
+      <h3>header works!</h3>
+      <p>Header component successfully rendered.</p>
+    </div>
+  </div>
+} @else {
+  <header class="hero" id="home">
+
+    <div class="nebula nebula-one" aria-hidden="true"></div>
+    <div class="nebula nebula-two" aria-hidden="true"></div>
+    <div class="starfield" aria-hidden="true"></div>
+
+    <!-- NAVIGATION -->
+    <nav class="navbar" aria-label="Main navigation">
+      <a href="#home" class="logo">SC<span>✦</span></a>
+
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#tools">Toolkit</a>
+        <a href="#contact" class="nav-contact">Let's talk ↗</a>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero-layout">
+
+      <div class="hero-content">
+
+        <div class="status-badge">
+          <span class="pulse-dot"></span>
+          AVAILABLE TO LEARN · CREATE · COLLABORATE
+        </div>
+
+        <p class="hero-kicker">HELLO, WORLD! I'M</p>
+
+        <h1>
+          {{ fullName() }}
+          <span>Designing beyond the ordinary.</span>
+        </h1>
+
+        <p class="role">{{ title() }}</p>
+
+        <p class="description">
+          {{ introduction() }}
+        </p>
+
+        <!-- EMAIL AND PHONE -->
+        <div class="hero-contact" aria-label="Contact information">
+
+          <a
+            [href]="'mailto:' + email()"
+            class="hero-contact-link">
+            <span aria-hidden="true">✉</span>
+            {{ email() }}
+          </a>
+
+          <a
+            [href]="'tel:' + phone()"
+            class="hero-contact-link">
+            <span aria-hidden="true">☎</span>
+            {{ phone() }}
+          </a>
+
+        </div>
+
+        <!-- HERO BUTTONS -->
+        <div class="hero-buttons">
+          <a href="#projects" class="btn-primary">
+            Explore my universe
+            <span>↗</span>
+          </a>
+
+          <a href="#contact" class="btn-outline">
+            Let's connect
+            <span>✧</span>
+          </a>
+        </div>
+
+        <div class="hero-micro">
+          <span><i></i> Based in Pampanga, PH</span>
+          <span>✦ Building with curiosity</span>
+        </div>
+
+      </div>
+
+      <!-- ANIMATED COSMIC PLANET -->
+      <div class="hero-visual" aria-hidden="true">
+
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+
+        <div class="planet">
+          <div class="planet-shine"></div>
+          <span>SC</span>
+          <small>CREATIVE / DEVELOPER</small>
+        </div>
+
+        <span class="orbit-spark spark-one">✦</span>
+        <span class="orbit-spark spark-two">✧</span>
+        <span class="orbit-spark spark-three">✳</span>
+
+        <div class="orbit-label">
+          IDEAS → EXPERIENCES
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- BOTTOM NAVIGATION -->
+    <div class="hero-bottom">
+      <span>01 / WEB DEVELOPMENT</span>
+      <span>02 / UI/UX DESIGN</span>
+      <span>03 / CREATIVE THINKING</span>
+      <a href="#about">SCROLL TO EXPLORE ↓</a>
+    </div>
+
+  </header>
+}
